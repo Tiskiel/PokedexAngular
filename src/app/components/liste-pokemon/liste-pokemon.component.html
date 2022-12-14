@@ -1,0 +1,21 @@
+<div class="flex flex-row">
+    <div class="pl-5">
+        <ul *ngIf="listePokemon && isLoad" className="">
+            <li *ngFor="let pokemon of listePokemon" (click)="showPokemon(pokemon.url)"
+                class="cursor-pointer hover:text-yellow-300">
+                {{pokemon.name}}
+            </li>
+        </ul>
+        <div class="flex flex-row">
+            <button (click)="previousPage(result.previous)"
+                class="border rounded-lg p-1 bg-slate-300 hover:bg-yellow-200 shadow-md">
+                <- </button> |
+                    <button (click)="nextPage(result.next)"
+                        class="border rounded-lg p-1 bg-slate-300 hover:bg-yellow-200 shadow-md"> -> </button>
+        </div>
+        <p class="pt-4">Page : {{acc}}</p>
+    </div>
+    <div class="pl-5 w-screen">
+        <app-pokemon></app-pokemon>
+    </div>
+</div>

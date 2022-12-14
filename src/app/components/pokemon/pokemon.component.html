@@ -1,0 +1,14 @@
+<p *ngIf="!isLoad">en cour de chargement</p>
+<div *ngIf="isLoad">
+    <p class="text-center text-2xl underline">Bienvenu sur la page de {{pokemon.forms[0].name}}</p>
+    <div class="flex rounded-xl justify-center ">
+        <img [src]="officialImg" alt="{{pokemon.forms[0].name}}" class="h-64" />
+    </div>
+    <div class="flex flex-row justify-center">
+        <img [src]="pokemon.sprites.front_default" [alt]="pokemon.forms[0].name" class="h-36" />
+        <img [src]="pokemon.sprites.back_default" [alt]="pokemon.forms[0].name" class="h-36" />
+    </div>
+    <p class="text-center">Nom : {{pokemon.forms[0].name}}</p>
+    <p class="text-center">Taille : {{pokemon.height | cmToM}}</p>
+    <p class="text-center">Poid : {{pokemon.weight | valueToKilo}}</p>
+</div>
