@@ -3,8 +3,10 @@
     class="justify-center">
 </p>
 
-<div *ngIf="isLoad" class="pt-52 pr-[23rem]">
-  <p class="text-center text-2xl underline">Bienvenue sur la page de {{pokemon.forms[0].name}}</p>
+<div *ngIf="isLoad" class="pt-24 pr-[23rem]">
+  <p
+    class="ml-[18rem] mb-24 w-[33rem] text-center text-2xl underline rounded-3xl p-5 bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">
+    Bienvenue sur la page de {{pokemon.forms[0].name}}</p>
   <div class="flex rounded-xl justify-center ">
     <img [src]="officialImg" alt="{{pokemon.forms[0].name}}" class="h-64" />
   </div>
@@ -12,7 +14,10 @@
     <img [src]="pokemon.sprites.front_default" [alt]="pokemon.forms[0].name" class="h-36" />
     <img [src]="pokemon.sprites.back_default" [alt]="pokemon.forms[0].name" class="h-36" />
   </div>
-  <p class="text-center">Nom : {{pokemon.forms[0].name}}</p>
-  <p class="text-center">Taille : {{pokemon.height | cmToM}}</p>
-  <p class="text-center">Poid : {{pokemon.weight | valueToKilo}}</p>
+  <div class="flex flex-row justify-evenly">
+    <p class="rounded-3xl p-5 text-center text-xl bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">Taille :
+      {{pokemon.height | cmToM}}</p>
+    <p class="rounded-3xl p-5 text-center text-xl bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">Poid :
+      {{pokemon.weight | valueToKilo}}</p>
+  </div>
 </div>

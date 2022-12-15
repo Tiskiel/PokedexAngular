@@ -1,6 +1,6 @@
 <div class="flex flex-row ">
   <div
-    class="flex flex-col h-[800px] mt-20 backdrop-blur-sm ml-16 p-16 justify-evenly items-center bg-slate-500/50 rounded-2xl">
+    class="flex flex-col h-[800px] mt-10 backdrop-blur-sm ml-16 p-16 justify-evenly items-center bg-slate-500/50 rounded-2xl">
     <div class="border w-52 h-96 overflow-auto">
       <ul *ngIf="listePokemon && isLoad">
         <li *ngFor="let pokemon of listePokemon" (click)="showPokemon(pokemon.url)"
@@ -10,10 +10,10 @@
       </ul>
     </div>
     <div class="flex flex-row justify-evenly w-full">
-      <button (click)="previousPage(result.previous)"
+      <button *ngIf="result.previous" (click)="previousPage(result.previous)"
         class="border rounded-lg p-2 bg-slate-300 hover:bg-yellow-200 shadow-md text-2xl text-center">
         <- </button>
-          <button (click)="nextPage(result.next)"
+          <button *ngIf="result.next" (click)="nextPage(result.next)"
             class="border rounded-lg p-2 bg-slate-300 hover:bg-yellow-200 shadow-md text-2xl text-center"> -> </button>
     </div>
     <p class="rounded-3xl p-5 text-center text-xl bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">Page :
