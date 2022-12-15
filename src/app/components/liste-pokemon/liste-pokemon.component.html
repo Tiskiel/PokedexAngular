@@ -1,21 +1,25 @@
-<div class="flex flex-row">
-    <div class="pl-5">
-        <ul *ngIf="listePokemon && isLoad" className="">
-            <li *ngFor="let pokemon of listePokemon" (click)="showPokemon(pokemon.url)"
-                class="cursor-pointer hover:text-yellow-300">
-                {{pokemon.name}}
-            </li>
-        </ul>
-        <div class="flex flex-row">
-            <button (click)="previousPage(result.previous)"
-                class="border rounded-lg p-1 bg-slate-300 hover:bg-yellow-200 shadow-md">
-                <- </button> |
-                    <button (click)="nextPage(result.next)"
-                        class="border rounded-lg p-1 bg-slate-300 hover:bg-yellow-200 shadow-md"> -> </button>
-        </div>
-        <p class="pt-4">Page : {{acc}}</p>
+<div class="flex flex-row ">
+  <div
+    class="flex flex-col h-[800px] mt-20 backdrop-blur-sm ml-16 p-16 justify-evenly items-center bg-slate-500/50 rounded-2xl">
+    <div class="border w-52 h-96 overflow-auto">
+      <ul *ngIf="listePokemon && isLoad">
+        <li *ngFor="let pokemon of listePokemon" (click)="showPokemon(pokemon.url)"
+          class="cursor-pointer hover:text-yellow-300 border pt-2 pb-2 p-1 m-1 mb-2 text-center text-xl bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">
+          {{pokemon.name}}
+        </li>
+      </ul>
     </div>
-    <div class="pl-5 w-screen">
-        <app-pokemon></app-pokemon>
+    <div class="flex flex-row justify-evenly w-full">
+      <button (click)="previousPage(result.previous)"
+        class="border rounded-lg p-2 bg-slate-300 hover:bg-yellow-200 shadow-md text-2xl text-center">
+        <- </button>
+          <button (click)="nextPage(result.next)"
+            class="border rounded-lg p-2 bg-slate-300 hover:bg-yellow-200 shadow-md text-2xl text-center"> -> </button>
     </div>
+    <p class="rounded-3xl p-5 text-center text-xl bg-slate-500/50 backdrop-blur-lg text-stone-100 font-bold">Page :
+      {{acc}}</p>
+  </div>
+  <div class="pl-5 w-screen">
+    <app-pokemon></app-pokemon>
+  </div>
 </div>
